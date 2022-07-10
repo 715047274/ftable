@@ -1,18 +1,22 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<!--    <img alt="Vue logo" src="../assets/logo.png">-->
+    <DataForm msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import DataForm from '@/components/DataForm.vue'
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    DataForm
   }
 }
 </script>
+<style>
+.home {
+  padding: 10px;
+}
+</style>
