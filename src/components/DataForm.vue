@@ -51,15 +51,12 @@ export default defineComponent({
     )
     const formatTable = computed(() => {
           if (source.value === target) {
-            console.log(source.value)
-            console.log(target)
             return target;
             // return Ftable.buildTable(target)
           } else if (target.length > 3 || target.value instanceof Object) {
-
             try {
               let t = JSON.parse(JSON.stringify(target.value))
-              let result = Ftable.buildTable(t)
+              let result = Ftable.buildTable(t[0])
               return result
             } catch {
               return "Error: Can't build table"
@@ -96,10 +93,11 @@ export default defineComponent({
     }
 
     &-target > pre {
+      border: dashed 1px black;
       color: blue !important;
       width: 40vw;
       // white-space: pre-line;
-      min-height: 32px;
+      min-height:  558px;
       max-height: 43vh;
       text-align: left;
     }
@@ -117,14 +115,15 @@ export default defineComponent({
     margin-top: 20px;
     white-space: nowrap;
     white-space: pre-line;
-
-    min-height: 45px;
+    margin-right: 5px;
+    margin-left: 5px;
+    min-height: 90px;
     max-height: 43vh;
     word-break: break-all;
   }
 }
 
-::v-deep .ant-input[disabled] {
-  background-color: transparent;
-}
+//::v-deep .ant-input[disabled] {
+//  background-color: transparent;
+//}
 </style>
